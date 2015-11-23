@@ -15,7 +15,7 @@
         <li><a href="/desks">Desks</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= current_user.email if current_user %></li>
+        <li style="margin-top: 1em"><%= current_user.email if current_user %></li>
         <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) if user_signed_in? %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
