@@ -10,6 +10,35 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
- */
+ *= require_tree .
+*/
+
+@import "bootstrap";
+
+.call-to-action a {
+  line-height: 7em;
+  width: 90%;
+}
+
+.signup {
+  width: 90%;
+
+}
+
+.submit {
+  margin-top: 2%;
+  text-align: center;
+}
+
+.form-col {
+  width: 40%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+.inline {
+  margin-right: 5px;
+}
+
