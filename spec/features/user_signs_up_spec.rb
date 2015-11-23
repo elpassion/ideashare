@@ -10,6 +10,7 @@ feature 'User signs up' do
     fill_in 'Password confirmation', with: 'password'
     click_button 'Sign up'
     expect(page).to have_content('You have signed up successfully.')
+    expect(page).to have_content('Logout')
   end
 
   scenario 'with invalid email' do
