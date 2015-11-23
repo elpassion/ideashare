@@ -1,11 +1,12 @@
 language: ruby
 rvm:
 - 2.2.3
-
 before_script:
-  - psql -c 'create database IdeaShare_test;' -U postgres
-
+- psql -c 'create database IdeaShare_test;' -U postgres
 deploy:
   provider: heroku
   api_key:
-    secure: cncM9vvWxTkvBgUipAz/O3ffnUB3SjE4pTrAWcqcyqv0O5jOFBelJHKodhRBb9qbEWNHS9dLNUHIVY+/ZnxNzSzI+qPBCyxu2WOEEfZTwRcx+UVKbXnOsHQHox6rPXOehLXBagTC58zCqXnI6v5M9GwefCrI+xrwhOP5MP/ON5xKHlf1XLpTcE7cFwN1+Cy/zn0GRu3vAu0ErurLp7XJVATX49Eo5kC7KxCojIROZr3cZXR1xRb5VMIHYBB/ofqXYYC2kfzMoHzXszRrejqQreRKW3gCJM0fkizgjzSMbQTHxG4BKSGrlpoG7gw/ZiydrwHlg/GM6Y8uqXficjdpOvx/MGscefAEQSTe1Q+b+na9EozAY3RyQSsB4ZNT+7dD0b7LerAm4n8bPLHp15f7I/Nke9gfHbzckhIGeXLbIMY+/KxaBaUuTtRhwNZKn80m35osy8sure+7FFqIxI+9NRroh3L/+o6qr6lcr4PENa7DNP/U8oCcKsF0lBfXSsNmOn2LXyUL+NksPd/5yK+l9iH7ithbPQOcP/jku2y/9FdhBasOHVXK+2nSL2A+EJVdfXr2OF/7RFz1c488ekvbNANJ+DVY2zq1HWwZJozO2dGPC/StQO17WLNauBExCjUeP6y8SVzTZb9wd0D14upWIJLkAGJpEHRSxYm4OPZsaH8=
+    secure: h4T6hvhJ9zrY7NhGEYLkw9f67aOnouz0pz5AQOjbyy/WzBlmcLykcsdmts1TsE0tqur8CjuFbNM59AM6c9dWnbc4/GWEpo4vBogVVCVp9tXTt1JGhzANqB2K6gKA2wiux9PxULDtZx6XC6ZK4wKkSw41v7x3XGnhju3XOXzkiOcy6INy3n8sPd/fQ/ndMaPB+hhikPZZHBTptLp8FPj+T/XTDvaSz829ySuKJs12QaXFZbVgkmm6Bh9OFtqUsj6B+AkhZusHw5xC+++7Y+vH4WAKFOTgwsKmppbt+nGazkbyX6kGs72RBthFz25sTCVHGu2pVjN16gszuDG3tro1/u1v0xAP0rWF/OISUwR6RyinqE+c5d3jfiyS3WERzoAM6gxGBxJD4c1WySIK78oQtq1Itq6AExzHddeGq5sHmmqE5uBWCIo+rLEb8eWhFOeMzK8nLU1MKcQC0EKQR3wSIoakLwuZglCu0md5H75oM+zYoRtiQ5olcCvwsBJURzPoAvZMJzGoSdRJKtuqUmNrjKR89gpFfXaXMyG7peD+M8ryqVEe9fafdkrMUsceZE0k+c39gf8pY6tI+kZk5pjTaK+ivGVDB+8Yf2Nq6KtxkMYvwPEYGjMJD11fqORZCyIsp0TfpcWbPd3HBzitlFN9iRnHCAWjZIkFYg/bDA1OUtQ=
+  app: ideashare-staging
+  on:
+    repo: elpassion/ideashare
