@@ -1,11 +1,11 @@
 def set_omniauth(opts = {})
-  default = {:provider => :facebook,
-             :uuid => '1234',
-             :facebook => {
-                 :email => 'foobar@example.com',
-                 :gender => 'Male',
-                 :first_name => 'foo',
-                 :last_name => 'bar'
+  default = {provider: :facebook,
+             uuid: '1234',
+             facebook: {
+                 email: 'foobar@example.com',
+                 gender: 'Male',
+                 first_name: 'foo',
+                 last_name: 'bar'
              }
   }
 
@@ -17,20 +17,20 @@ def set_omniauth(opts = {})
 
   OmniAuth.config.mock_auth[provider] = OmniAuth::AuthHash.new(
       {
-          'uid' => credentials[:uuid],
-          'info' => {
-              'email' => user_hash[:email],
-              'first_name' => user_hash[:first_name],
-              'last_name' => user_hash[:last_name],
-              'gender' => user_hash[:gender]
+          uid: credentials[:uuid],
+          info: {
+              email: user_hash[:email],
+              first_name: user_hash[:first_name],
+              last_name: user_hash[:last_name],
+              gender: user_hash[:gender]
           }
       })
 end
 
 def set_invalid_omniauth(opts = {})
 
-  credentials = {:provider => :facebook,
-                 :invalid => :invalid_crendentials
+  credentials = {provider: :facebook,
+                 invalid: :invalid_crendentials
   }.merge(opts)
 
   OmniAuth.config.test_mode = true

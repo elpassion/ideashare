@@ -1,6 +1,6 @@
 require_relative '../rails_helper'
 
-feature 'Sign via Facebook' do
+RSpec.feature 'Sign via Facebook', type: :feature do
   context 'valid omniauth' do
     before do
       set_omniauth
@@ -9,7 +9,7 @@ feature 'Sign via Facebook' do
     end
 
     scenario 'with successful auth' do
-      expect(page.status_code).to be 200
+      expect(page.status_code).to eq(200)
       expect(page).to have_content 'foobar@example.com'
     end
   end
@@ -22,7 +22,7 @@ feature 'Sign via Facebook' do
     end
 
     scenario 'with failed auth' do
-      expect(page.status_code).to be 200
+      expect(page.status_code).to eq(200)
       expect(page).to_not have_content 'foobar@example.com'
     end
   end
