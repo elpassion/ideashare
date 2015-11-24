@@ -8,6 +8,8 @@ class Desk < ActiveRecord::Base
   validate :finish_date_cannot_be_in_the_past
   validate :finish_date_cannot_be_before_start_date
 
+  has_many :ideas
+
   private
 
   def finish_date_cannot_be_in_the_past
