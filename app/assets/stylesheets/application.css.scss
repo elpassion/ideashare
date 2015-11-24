@@ -17,8 +17,9 @@
 @import "bootstrap";
 
 .call-to-action a {
-  line-height: 7em;
-  width: 90%;
+  margin-top: 2em;
+  line-height: 4em;
+  width: 72%;
 }
 
 .signup {
@@ -40,6 +41,11 @@
 
 .inline {
   margin-right: 5px;
+}
+
+.inline-login {
+  margin-right: 10px;
+  display: inline-block;
 }
 
 .logo {
