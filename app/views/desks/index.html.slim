@@ -1,7 +1,8 @@
 .container
-    .accordion
-      - @desks.each do |desk|
-        h3
-          = desk.name
-        div
-          = desk.description
+  .accordion
+    - @desks.each do |desk|
+      h3
+        = desk.name
+      div
+        = desk.description
+  = paginate @desks

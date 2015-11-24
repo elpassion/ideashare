@@ -1,5 +1,5 @@
 class DesksController < ApplicationController
   def index
-    @desks = Desk.all
+    @desks = Desk.page(params[:page]).per(2)
   end
 end
