@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20151124105417) do
   create_table "ideas", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "owner_id"
-    t.integer  "desk_id"
+    t.integer  "owner_id",    null: false
+    t.integer  "desk_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
