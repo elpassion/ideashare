@@ -42,6 +42,9 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'timecop'
 end
 
 group :development do
@@ -52,3 +55,4 @@ group :development do
   gem 'spring'
 end
 
+gem 'date_validator'
