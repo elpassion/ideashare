@@ -1,0 +1,9 @@
+.logo
+  = logo "IS-logo-big.png", "medium"
+.row.call-to-action
+  .col-xs-6
+    p.text-center
+      = link_to('Join', new_user_registration_path, class: 'btn btn-default btn-lg')
+  .col-xs-6
+    p.text-center
+      = link_to('Login', new_user_session_path, class: 'btn btn-default btn-lg')

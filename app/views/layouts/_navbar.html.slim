@@ -1,0 +1,22 @@
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      .container-fluid
+        .navbar-header
+          a.navbar-brand[href="/"]
+            = image_tag("IS.png", width: 20, height: 20)
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li.active
+          a[href="/"]
+            | Home 
+            span.sr-only
+              | (current)
+        li
+          a[href="/desks"]
+            | Desks
+      ul.nav.navbar-nav.navbar-right
+        li[style="margin-top: 1em"]
+          = current_user.email if current_user
+        li
+          = link_to('Logout', destroy_user_session_path, :method => :delete) if user_signed_in?

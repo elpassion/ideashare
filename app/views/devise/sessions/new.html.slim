@@ -1,0 +1,14 @@
+h1
+  | Log in
+= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-group text-center'}) do |f|
+  .form-group.form-col
+    = f.email_field :email, autofocus: true, class: 'form-control text-center', placeholder: 'Email'
+  .form-group.form-col
+    = f.password_field :password, autocomplete: 'off', class: 'form-control text-center', placeholder: 'Password'
+  .inline-login
+    - if devise_mapping.rememberable?
+      = f.check_box :remember_me
+      = f.label :remember_me
+  .inline-login
+    = f.submit "Log in", class: 'btn btn-default'
+= render "devise/shared/links"
