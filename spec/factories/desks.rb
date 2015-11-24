@@ -5,7 +5,7 @@ FactoryGirl.define do
     association :owner, factory: :user
     f.name 'Desk name'
     f.description 'Such desk, many ideas, wow'
-    f.finish_at { rand(1.days).seconds.from_now }
-    f.start_at { finish_at ? 1.day.ago(finish_at) : rand(1.days).seconds.ago }
+    f.finish_at { 2.day.from_now(Time.current) }
+    f.start_at { 1.day.from_now(Time.current) }
   end
 end

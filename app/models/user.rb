@@ -14,6 +14,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  has_many :desks, foreign_key: 'owner_id'
-  has_many :ideas, foreign_key: 'owner_id'
+  has_many :desks, foreign_key: :owner_id
+  has_many :ideas, foreign_key: :owner_id
 end

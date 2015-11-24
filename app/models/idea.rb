@@ -1,5 +1,6 @@
 class Idea < ActiveRecord::Base
-  belongs_to :owner, class_name: User, required: true
+  validates_uniqueness_of :owner_id, scope: :desk_id
+  belongs_to :owner, class_name: 'User', required: true
 
   belongs_to :desk, required: true
 
@@ -7,18 +8,14 @@ class Idea < ActiveRecord::Base
 
   validate :user_can_add_only_one_idea_to_specific_desk
 
-  scope :by_desk, -> (desk) {
-    where('desk_id = ?', desk.id)
-  }
-
   scope :by_owner, -> (user) {
-    where('owner_id = ?', user.id)
+    where(owner_id: user)
   }
 
   private
 
   def user_can_add_only_one_idea_to_specific_desk
-    if desk && owner && Idea.by_desk(desk).by_owner(owner).first
+    if desk && owner && desk.ideas.by_owner(owner).first
       errors.add(:user, "can't add multiple ideas to single desk")
     end
   end
