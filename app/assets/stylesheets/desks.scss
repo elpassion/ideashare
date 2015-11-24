@@ -1,0 +1,24 @@
+// Place all the styles related to the desks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//
+.container {
+   width: 60%;
+   .accordion {
+     .ui-accordion-header {
+       display: block;
+       cursor: pointer;
+       position: relative;
+       margin: 2px 0 0 0;
+       padding: .5em .5em .5em .7em;
+       min-height: 0;
+       font-size: 100%;
+     }
+     .ui-accordion-content {
+       padding: 1em 2.2em;
+       border-top: 0;
+       overflow: auto;
+       border: 1px solid black;
+     }
+   }
+ }
