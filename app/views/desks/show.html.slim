@@ -8,10 +8,11 @@ div class=('ideas')
     br/
     = idea.description
     div class=('likes')
-      - if idea.is_liked_by?(current_user)
-        = unlike(idea, current_user)
-      - else
-        = like(idea)
+      - if user_signed_in?
+        - if idea.is_liked_by?(current_user)
+          = unlike(idea, current_user)
+        - else
+          = like(idea)
       br/
     br/
 
