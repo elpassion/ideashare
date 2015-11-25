@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {  :omniauth_callbacks => "callbacks", :registrations => "registrations" }
   root 'pages#index'
   resources :desks do
-    resources :ideas
+    resources :ideas do
+      resources :likes, only: [:create, :destroy]
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

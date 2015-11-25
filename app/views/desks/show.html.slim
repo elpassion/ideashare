@@ -4,9 +4,15 @@ div class=('description-desk') = @desk.description
 div class=('ideas')
   - @desk.ideas.each do |idea|
     = idea.name
+
     br/
     = idea.description
-    br/
+    div class=('likes')
+      - if idea.is_liked_by?(current_user)
+        = unlike(idea, current_user)
+      - else
+        = like(idea)
+      br/
     br/
 
 div class=('text-center')

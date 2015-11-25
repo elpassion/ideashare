@@ -2,9 +2,10 @@
   .accordion
     - @desks.each do |desk|
       h3
-        = desk.name
+        =  desk.name
       div
         = desk.description
   = paginate @desks
 .container
   = link_to('Add new desk', new_desk_path, class: 'btn btn-default') if user_signed_in?
+

@@ -1,4 +1,6 @@
 class Idea < ActiveRecord::Base
+  include Likeable
+
   validates :owner_id, uniqueness: {scope: :desk_id, message: "User can't add multiple ideas to single desk"}
   belongs_to :owner, class_name: 'User', required: true
 
