@@ -1,0 +1,6 @@
+ul
+  - @desk.errors.messages.each do |key, value|
+    - value.each do |msg|
+      li= msg
+
+= render 'form'

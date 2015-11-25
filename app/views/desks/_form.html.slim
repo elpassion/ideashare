@@ -1,0 +1,13 @@
+h1
+  | Add new desk
+= form_for @desk, html: { multipart: true } do |f|
+  .form-group.form-col
+    = f.text_field :name, autofocus: true, placeholder: 'Desk name', class: 'form-control text-center'
+  .form-group.form-col
+    = f.text_area :description, autocomplete: 'off', placeholder: 'Description', class: 'form-control text-center'
+  .form-group.form-col
+    = f.date_select :start_at
+  .form-group.form-col
+    = f.date_select :finish_at
+  .submit
+    = f.submit "Add", class: 'btn btn-default'
