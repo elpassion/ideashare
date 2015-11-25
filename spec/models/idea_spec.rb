@@ -25,11 +25,17 @@ RSpec.describe Idea, type: :model do
   end
 
   describe 'if time is up to add new idea' do
-    xit 'will not add idea to an expired desk' do
-      Timecop.freeze(2015, 10, 1, 11, 0)
-      finish_time = DateTime.new(2015, 10, 1, 14, 0)
-      desk = build(:desk, finish_at: finish_time)
-      expect(build(:idea, desk: desk)).not_to be_valid
+    it 'will not add idea to an expired desk' do
+      desk = build(:desk, finish_at: DateTime.new(2015, 10, 1, 11, 0))
+
+      Timecop.freeze(2015, 10, 1, 14, 0)
+      idea = build(:idea, desk: desk)
+
+      expect {
+        idea.save
+      }.not_to change { Idea.count }
+
+      expect(idea).not_to be_valid
     end
   end
 end
