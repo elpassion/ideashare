@@ -12,10 +12,13 @@ class DesksController < ApplicationController
   end
 
   def create
-    desk = Desk.new(permitted_params)
-    desk.owner = current_user
-    desk.save!
-    redirect_to(desk, notice: 'Desk was successfully added.')
+    @desk = Desk.new(permitted_params)
+    @desk.owner = current_user
+    if @desk.save
+      redirect_to(@desk, notice: 'Desk was successfully added.')
+    else
+      render(:new)
+    end
   end
 
   private
