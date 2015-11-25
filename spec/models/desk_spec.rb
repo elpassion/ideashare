@@ -57,7 +57,7 @@ RSpec.describe Desk, type: :model do
 
       expect { second_idea.save }.not_to change { desk.ideas.count }
       expect(desk.ideas.first.name).to eq idea.name
-      expect(second_idea.errors).to include(:user)
+      expect(second_idea.errors).to include(:owner_id)
     end
 
     it 'has multiple idea by different user in single' do
