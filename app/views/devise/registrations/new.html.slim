@@ -9,7 +9,9 @@ h1
   .form-group.form-col
     = f.password_field :password_confirmation, autocomplete: 'off', placeholder: 'Password confirmation', class: 'form-control text-center'
   .form-group.form-col
-    = f.date_select :date_of_birth
+    = f.label :date_of_birth
+    .inline-date-of-birth
+      = f.date_select :date_of_birth, start_year: 1900
   .submit
     = f.submit "Sign up", class: 'btn btn-default'
 = render "devise/shared/links"
