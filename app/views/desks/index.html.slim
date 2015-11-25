@@ -1,11 +1,17 @@
 .container
-  .accordion
+  .panel-group id="desks" role="tablist" aria-multiselectable="true"
     - @desks.each do |desk|
-      h3
-        =  desk.name
-      div
-        = desk.description
+      .panel.panel-default
+        .panel-heading role="tab" id="heading-desk-#{desk.id}"
+          h4
+            .panel-title
+              = link_to(desk.name, desk)
+              a role="button" data-toggle="collapse" data-parent="#desks" href="#desk-#{desk.id}" aria-expanded="true" aria-controls="desk-#{desk.id}"
+                span class="glyphicon glyphicon-chevron-up pull-right indicator"
+        .panel-collapse.collapse id="desk-#{desk.id}" role="tabpanel" aria-labelledby="heading-desk-#{desk.id}"
+          .panel-body
+            =desk.description
+
   = paginate @desks
 .container
   = link_to('Add new desk', new_desk_path, class: 'btn btn-default') if user_signed_in?
-
