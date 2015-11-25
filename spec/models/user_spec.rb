@@ -20,9 +20,8 @@ RSpec.describe User, type: :model do
   end
 
   describe 'date_of_birth' do
-    it 'is required' do
-      expect(user_with_empty_date_of_birth).to_not be_valid
-      expect(user_with_empty_date_of_birth.errors[:date_of_birth]).to_not be_empty
+    it 'is not required' do
+      expect(user_with_empty_date_of_birth).to be_valid
     end
   end
 end
