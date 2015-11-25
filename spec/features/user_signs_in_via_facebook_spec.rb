@@ -24,7 +24,8 @@ RSpec.feature 'Sign via Facebook', type: :feature do
 
     scenario 'with failed auth' do
       expect(page.status_code).to eq(200)
-      expect(page).to_not have_content 'Successfully authenticated from Facebook account.'
+      expect(page).to_not have_content('Successfully authenticated from Facebook account.')
+      expect(page).to have_content('No email, registration faild')
       expect(page.current_path).to eq(new_user_registration_path)
     end
   end

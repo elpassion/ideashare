@@ -6,7 +6,7 @@ class CallbacksController < Devise::OmniauthCallbacksController
       sign_in @user
       redirect_to desks_path
     else
-      redirect_to new_user_registration_path
+      redirect_to new_user_registration_path, notice: 'No email, registration faild'
     end
   end
 end
