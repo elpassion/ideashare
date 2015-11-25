@@ -1,6 +1,14 @@
-h1 = @desk.name
+h2 = @desk.name
+div class=('description-desk') = @desk.description
 
+div class=('ideas')
+  - @desk.ideas.each do |idea|
+    = idea.name
+    br/
+    = idea.description
+    br/
+    br/
 
-p class=('text-center') = @desk.description
-
-p class=('text-center') = link_to("Back to list", desks_path, class: 'btn btn-default')
+div class=('text-center')
+  div class=('button-desks') = link_to("Add new idea", new_desk_idea_path(@desk), class: 'btn btn-default') if user_signed_in?
+  div class=('button-desks') = link_to("Back to list", desks_path, class: 'btn btn-default')

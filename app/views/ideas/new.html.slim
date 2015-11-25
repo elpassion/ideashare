@@ -1,0 +1,6 @@
+ul
+  - @idea.errors.messages.each do |key, value|
+    - value.each do |msg|
+      li= "#{key} #{msg}"
+
+= render 'form'

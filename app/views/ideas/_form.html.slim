@@ -1,0 +1,9 @@
+h1
+  | Add new idea
+= form_for([@desk, @idea], html: { multipart: true }) do |f|
+  .form-group.form-col
+    = f.text_field :name, autofocus: true, placeholder: 'Name', class: 'form-control text-center'
+  .form-group.form-col
+    = f.text_field :description, placeholder: 'Description', class: 'form-control text-center'
+  .submit
+    = f.submit "Add", class: 'btn btn-default'
